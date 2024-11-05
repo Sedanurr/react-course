@@ -19,17 +19,40 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      function Header() {
-        return <h1>Eve's Kitchen</h1>;
+      function Header(props) {
+        return <h1>{props.name}'s Kitchen</h1>;
       }
-      function Main() {
-        return <section>We serve the most delicious food around</section>;
+      function Main(props) {
+        return (
+          <section>
+            <img height={200} src="./pexels-chanwalrus-958545.jpg" />
+            <ul>
+              {props.dishes.map((dish) => (
+                <li>{dish.title}</li>
+              ))}
+            </ul>
+          </section>
+        );
       }
+      function Footer(props) {
+        return <footer>Copyright {props.year}</footer>;
+      }
+      const dishes = [
+        "Black Bean Soup",
+        "Mac and Cheese",
+        "Salmon and Potatoes",
+        "Pizza",
+      ];
+      const dishesObject = dishes.map((dish, i) => ({
+        id: i,
+        title: dish,
+      }));
       function App() {
         return (
           <div>
-            <Header />
-            <Main />
+            <Header name="Seda" />
+            <Main dishes={dishesObject} />
+            <Footer year={2024} />
           </div>
         );
       }
