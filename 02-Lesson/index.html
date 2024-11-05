@@ -19,11 +19,16 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
+      let rocket = "🚀";
+      let bear = "🧸";
+      let sword = "⚔️";
+      let name = "react";
       ReactDOM.render(
         <ul>
-          <li>🚀</li>
-          <li>🧸</li>
-          <li>⚔️</li>
+          <li>{rocket}</li>
+          <li>{bear}</li>
+          <li>{sword}</li>
+          <li>{name.toUpperCase()}</li>
         </ul>,
         document.getElementById("root")
       );
