@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/babel-standalone@6/babel.min.js"
+    ></script>
+    <title>React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      let rocket = "🚀";
+      let bear = "🧸";
+      let sword = "⚔️";
+      let name = "react";
+      ReactDOM.render(
+        <ul>
+          <li>{rocket}</li>
+          <li>{bear}</li>
+          <li>{sword}</li>
+          <li>{name.toUpperCase()}</li>
+        </ul>,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
