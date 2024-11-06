@@ -10,7 +10,7 @@ function App() {
     e.preventDefault();
     alert(`${title},${color}`);
     setTitle("")
-    setColor("")
+    setColor("#000000")
   }
   return (
     <form onSubmit={submit}>
