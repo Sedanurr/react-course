@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-import { useRef } from 'react'
+import { useState } from 'react'
 
 function App() {
-  const txtTitle = useRef();
-  const colorCode = useRef();
+  const [title, setTitle] = useState();
+  const [color, setColor] = useState();
 
   const submit = (e) => {
     e.preventDefault();
-    const title = txtTitle.current.value;
-    const color = colorCode.current.value;
     alert(`${title},${color}`);
-    txtTitle.current.value = "";
-    colorCode.current.value = "";
+    setTitle("")
+    setColor("")
   }
   return (
     <form onSubmit={submit}>
-      <input type="text" placeholder='color name ...' ref={txtTitle} />
-      <input type="color" ref={colorCode} />
+      <input type="text" placeholder='color name ...' value={title} onChange={(event) => setTitle(event.target.value)} />
+      <input type="color" value={color} onChange={(event) => setColor(event.target.value)} />
       <button>Add</button>
     </form>
   );
