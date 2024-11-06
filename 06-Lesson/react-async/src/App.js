@@ -2,6 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react'
 
+function GithubUser({ name, location, avatar }) {
+  return (
+    <div>
+      <h1>{name}</h1>
+      <p>{location}</p>
+      <img src={avatar} alt={name} height={50} />
+    </div>
+  )
+}
+
 function App() {
   const [data, setData] = useState(null)
 
@@ -14,7 +24,11 @@ function App() {
   }, []);
   if (data)
     return (
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <GithubUser
+        name={data.name}
+        location={data.location}
+        avatar={data.avatar_url}
+      />
     );
   return (
     <h1>Data</h1>
